@@ -1,0 +1,294 @@
+.blog-index-page {
+    min-height: 100vh;
+    background: #0d0d0d;
+    color: #e6e6e6;
+    padding: 4rem 1.5rem 6rem;
+}
+
+.blog-index-container {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.blog-index-title {
+    font-family: "Galfego";
+    font-weight: normal;
+    font-size: clamp(2.75rem, 6vw, 5rem);
+    line-height: 1.05;
+    margin: 0 0 1rem;
+    color: lavender;
+}
+
+.blog-index-intro {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.75);
+    max-width: 620px;
+    margin-bottom: 3.5rem;
+}
+
+.blog-index-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.post-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 2fr) 3fr;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 230, 230, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(167, 199, 231, 0.45);
+}
+
+.post-card-imagewrap {
+    display: block;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.post-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.post-card:hover .post-card-image {
+    transform: scale(1.04);
+}
+
+.post-card-body {
+    padding: 1.75rem 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card-meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #A7C7E7;
+    margin-bottom: 0.6rem;
+}
+
+.post-card-title {
+    margin: 0 0 0.4rem;
+}
+
+.post-card-title a {
+    font-family: "Galfego";
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    color: #e6e6e6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-card-title a:hover {
+    color: lavender;
+}
+
+.post-card-tagline {
+    font-size: 1rem;
+    color: rgba(230, 230, 230, 0.65);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.post-card-excerpt {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.post-card-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.post-card-link {
+    font-size: 0.95rem;
+    color: lavender;
+    border: 1px solid lavender;
+    border-radius: 6px;
+    padding: 0.45rem 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card-link:hover {
+    background: lavender;
+    color: #2a2a2a;
+}
+
+.post-card-link.secondary {
+    color: rgba(230, 230, 230, 0.8);
+    border-color: rgba(230, 230, 230, 0.35);
+}
+
+.post-card-link.secondary:hover {
+    background: rgba(230, 230, 230, 0.9);
+    border-color: rgba(230, 230, 230, 0.9);
+    color: #2a2a2a;
+}
+
+/* Travel guides section */
+
+.guides-section {
+    margin-top: 4.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(230, 230, 230, 0.12);
+}
+
+.guides-heading {
+    font-family: "Galfego";
+    font-weight: normal;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    margin: 0.4rem 0 0.75rem;
+    color: lavender;
+}
+
+.guides-intro {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.75);
+    max-width: 620px;
+    margin-bottom: 2.25rem;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+.guide-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 230, 230, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(167, 199, 231, 0.45);
+}
+
+.guide-card-imagewrap {
+    display: block;
+    aspect-ratio: 16 / 8;
+    overflow: hidden;
+}
+
+.guide-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.guide-card:hover .guide-card-image {
+    transform: scale(1.04);
+}
+
+.guide-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.4rem 1.5rem 1.6rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.guide-card-title {
+    margin: 0 0 0.6rem;
+}
+
+.guide-card-title a {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: #e6e6e6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.guide-card-title a:hover {
+    color: lavender;
+}
+
+.guide-card-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.85);
+    margin-bottom: 1.25rem;
+}
+
+.guide-card-body .post-card-link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .blog-index-page {
+        padding: 2rem 1.25rem 4rem;
+    }
+
+    .guides-section {
+        margin-top: 3rem;
+        padding-top: 2.25rem;
+    }
+
+    .guides-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .blog-index-intro {
+        margin-bottom: 2.5rem;
+    }
+
+    .post-card {
+        grid-template-columns: 1fr;
+    }
+
+    .post-card-imagewrap {
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+    }
+
+    .post-card-body {
+        padding: 1.4rem 1.4rem 1.6rem;
+    }
+
+    .post-card-title a {
+        font-size: 2rem;
+    }
+
+    .post-card-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}

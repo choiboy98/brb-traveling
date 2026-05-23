@@ -26,4 +26,23 @@ const Photos = [
     { src: "/assets/photos/iceland/06.jpg", alt: "Sheep on a hillside" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2024-06-08", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "Driving Iceland's south coast, where the scenery resets every twenty minutes — black sand beaches, glaciers, hot springs, and the best gas station food on the planet.",
+    quickTips: [
+        { label: "Best time to go", tip: "June–August for endless daylight and open roads; September for fewer crowds and a shot at the northern lights." },
+        {
+            label: "Getting around",
+            tip: "Rent a car — the south coast and ring road are the whole point. Watch the wind warnings and fuel up whenever you can.",
+            links: [
+                // PLACEHOLDER affiliate URLs — swap for your tracking links once enrolled
+                { text: "Compare rental cars", href: "https://www.rentalcars.com/en/country/is/", sponsored: true },
+                { text: "Stays along the south coast", href: "https://www.booking.com/region/is/south-iceland.html", sponsored: true },
+            ],
+        },
+        { label: "Must-eats", tip: "Reykjavík hot dogs, lamb soup, and anything from an N1 gas station — genuinely better than most sit-down restaurants." },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

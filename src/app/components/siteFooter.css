@@ -1,0 +1,88 @@
+.site-footer {
+    background: #0d0d0d;
+    color: #e6e6e6;
+    border-top: 1px solid rgba(230, 230, 230, 0.12);
+    padding: 3.5rem 1.5rem 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.site-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.site-footer-brand {
+    max-width: 320px;
+}
+
+.site-footer-wordmark {
+    font-family: 'Galfego', serif;
+    font-size: 1.8rem;
+    color: #e6e6e6;
+    text-decoration: none;
+}
+
+.site-footer-wordmark:hover {
+    color: lavender;
+}
+
+.site-footer-tagline {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.65);
+}
+
+.site-footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.site-footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.site-footer-heading {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #A7C7E7;
+    margin-bottom: 0.35rem;
+}
+
+.site-footer-col a {
+    color: rgba(230, 230, 230, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.site-footer-col a:hover {
+    color: lavender;
+}
+
+.site-footer-copy {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(230, 230, 230, 0.08);
+    font-size: 0.85rem;
+    color: rgba(230, 230, 230, 0.5);
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 2.5rem 1.25rem 1.5rem;
+    }
+
+    .site-footer-nav {
+        gap: 2rem;
+    }
+}

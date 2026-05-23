@@ -9,6 +9,7 @@
     "start": "next start",
     "static": "next build && touch ./out/.nojekyll && echo 'www.brb-traveling.com' > ./out/CNAME",
     "lint": "next lint",
+    "photos:placeholders": "node scripts/generate-placeholder-photos.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out -t true"
   },
@@ -30,6 +31,7 @@
     "eslint-config-next": "14.0.4",
     "gh-pages": "^6.1.1",
     "postcss": "^8",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

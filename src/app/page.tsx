@@ -1,81 +1,70 @@
-'use client';
-
-import './landing.css'
-import { useState } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import CountryButton from './components/countryButton';
-import CountryRenderer from './components/countryRenderer';
-import BackgroundVideo from './components/backgroundVideo';
-import { countries } from "./components/countryExport";
-import { Country } from '@/app/components/country';
+import './landing.css';
+import LandingHero from './components/landingHero';
+import JsonLd from './components/jsonLd';
+import { countries } from './components/countryExport';
+import { displayName, formatDate, readTimeMinutes, sortedByDate, webSiteJsonLd } from './lib/seo';
+import { SITE_DESCRIPTION } from './lib/site';
+
+export const metadata: Metadata = {
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
+};
 
 export default function Home() {
-  const dummyCountry = new Country("", "", "", "", "");
-  const [currCountry, setCountry] = useState(dummyCountry);
-  const [isFocused, setFocus] = useState(false);
-
-  function handleClick(country : Country) {
-    if (!isFocused) {
-      setFocus(!isFocused);
-    }
-
-    if (country.equals(currCountry)) {
-      setFocus(!isFocused);
-      setCountry(dummyCountry);
-    }
-  }
-
   return (
-    <div className='background-page'>
-      <div className={isFocused ? "focused-vid" : "landing-vid"}>
-        <BackgroundVideo
-          className="vid"
-          src="/assets/videos/hls/master.m3u8"
-          poster="/assets/videos/taiwan-poster.jpg"
-        />
-      </div>
+    <>
+      <JsonLd data={webSiteJsonLd()} />
+      <LandingHero />
 
-      <div className="landing-container">
-        <p className={isFocused ? "vanish-landing-text" : "landing-text"}>
-            BRB TRAVELING
-        </p>
-
-        {CountryRenderer(
-          countries.flatMap(country => {
-            return (country.title)
-          }), isFocused
-        )}
-
-        <div className='flag-container'>
-          {countries.map(country => {
-            return (
-              CountryButton(country, setCountry, () => {handleClick(country)})
-            )
-          })}
-        </div>
-      </div>
-
-      <div className={isFocused ? "country-text" : "vanish-country-text"}>
-          <p className='country-header-text'>
-            {currCountry.titleText}
+      <section id="destinations" className="destinations" aria-labelledby="destinations-heading">
+        <div className="destinations-inner">
+          <p className="destinations-eyebrow">Travel journal</p>
+          <h2 id="destinations-heading" className="destinations-heading">Destinations</h2>
+          <p className="destinations-intro">
+            Field notes, practical tips, and photo diaries from every stop so far.
+            Pick a country to read the story or browse the gallery.
           </p>
 
-          <p className='country-sub-text'>
-            {currCountry.subText}
-          </p>
+          <div className="destinations-grid">
+            {sortedByDate(countries).map((country) => (
+              <article key={country.slug} className="destination-card">
+                <Link href={`/blog/${country.slug}`} className="destination-card-imagewrap">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="destination-card-image"
+                    src={country.coverPhoto?.src}
+                    alt={country.coverPhoto?.alt ?? displayName(country)}
+                    loading="lazy"
+                  />
+                </Link>
+                <div className="destination-card-body">
+                  <h3 className="destination-card-title">{displayName(country)}</h3>
+                  <p className="destination-card-meta">
+                    {country.date && <span>{formatDate(country.date)}</span>}
+                    <span>{readTimeMinutes(country.blog)} min read</span>
+                  </p>
+                  <p className="destination-card-excerpt">{country.excerpt}</p>
+                  <div className="destination-card-links">
+                    <Link href={`/blog/${country.slug}`} className="destination-card-link">
+                      Read the blog →
+                    </Link>
+                    <Link href={`/photos/${country.slug}`} className="destination-card-link">
+                      View photos →
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
 
-          {currCountry.slug && (
-            <div className='country-actions'>
-              <Link href={`/blog/${currCountry.slug}`} className='country-action-btn'>
-                Read the blog →
-              </Link>
-              <Link href={`/photos/${currCountry.slug}`} className='country-action-btn'>
-                View photos →
-              </Link>
-            </div>
-          )}
+          <Link href="/blog" className="destinations-all-link">
+            Read the full journal →
+          </Link>
         </div>
-    </div>
+      </section>
+    </>
   )
 }

@@ -18,16 +18,17 @@
       "static/css/app/blog/[country]/page.css",
       "static/chunks/app/blog/[country]/page.js"
     ],
-    "/photos/[country]/page": [
+    "/blog/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/photos/[country]/page.css",
-      "static/chunks/app/photos/[country]/page.js"
+      "static/css/app/blog/page.css",
+      "static/chunks/app/blog/page.js"
     ],
-    "/not-found": [
+    "/guides/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
+      "static/css/app/guides/[slug]/page.css",
+      "static/chunks/app/guides/[slug]/page.js"
     ]
   }
 }

@@ -3,14 +3,17 @@
 @tailwind utilities;
 
 .background-page {
-    width: 100vw;
+    position: relative;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    background-color: #0d0d0d;
 }
 
 .landing-vid {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: auto auto auto auto;
     background-color: black;
@@ -41,7 +44,7 @@
 }
 
 .landing-container {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 10%;
 }
@@ -50,6 +53,7 @@
     margin: 0;
     line-height: 1;
     font-family: "Galfego";
+    font-weight: normal;
     font-size: 10vw;
     opacity: 1;
     transition: 2s;
@@ -59,6 +63,7 @@
     margin: 0;
     line-height: 1;
     font-family: "Galfego";
+    font-weight: normal;
     font-size: 10vw;
     opacity: 0;
     transition: 2s;
@@ -68,7 +73,7 @@
     top: 50%;
     left: 70%;
     padding-right: 10%;
-    position: fixed;
+    position: absolute;
     width: 30vw;
     opacity: 1;
     transition: 2s;
@@ -78,7 +83,7 @@
     top: 50%;
     left: 70%;
     padding-right: 10%;
-    position: fixed;
+    position: absolute;
     width: 30vw;
     opacity: 0;
     transition: 2s;
@@ -136,7 +141,7 @@
        summary text is readable on top. */
     .landing-vid,
     .focused-vid {
-        width: 100vw;
+        width: 100%;
         height: 100dvh;
         position: relative;
         transition: background 0.4s ease;
@@ -163,8 +168,11 @@
         pointer-events: none;
     }
 
+    /* Span the full hero so the bottom-anchored flag row positions
+       against the hero, not just the title block. */
     .landing-container {
         top: 6vh;
+        bottom: 0;
         left: 1.25rem;
         right: 1.25rem;
     }
@@ -182,7 +190,7 @@
 
     /* Flags row: center, bigger touch targets, gridded across the width. */
     .flag-container {
-        position: fixed;
+        position: absolute;
         top: auto;
         bottom: calc(env(safe-area-inset-bottom, 0px) + 1.25rem);
         left: 50%;
@@ -249,6 +257,217 @@
     .title-text,
     .sliding-title-text {
         font-size: 5vh;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Scroll cue at the bottom of the hero                              */
+/* ---------------------------------------------------------------- */
+
+.scroll-cue {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    color: rgba(230, 230, 230, 0.75);
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-cue:hover {
+    color: lavender;
+    transform: translateX(-50%) translateY(2px);
+}
+
+.scroll-cue-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.scroll-cue-chevron {
+    font-size: 1.5rem;
+    line-height: 1;
+    animation: scroll-cue-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+@media (max-width: 768px) {
+    /* The flag row owns the bottom of the hero on phones. */
+    .scroll-cue {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Destinations section (crawlable journal preview below the hero)  */
+/* ---------------------------------------------------------------- */
+
+.destinations {
+    background: #0d0d0d;
+    color: #e6e6e6;
+    padding: 5rem 1.5rem 4rem;
+}
+
+.destinations-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.destinations-eyebrow {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #A7C7E7;
+}
+
+.destinations-heading {
+    font-family: 'Galfego', serif;
+    font-weight: normal;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.05;
+    margin: 0.5rem 0 1rem;
+}
+
+.destinations-intro {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.75);
+    max-width: 640px;
+    margin-bottom: 3rem;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(230, 230, 230, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 199, 231, 0.45);
+}
+
+.destination-card-imagewrap {
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.destination-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-card-image {
+    transform: scale(1.04);
+}
+
+.destination-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.25rem 1.4rem 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.destination-card-title {
+    font-family: 'Galfego', serif;
+    font-weight: normal;
+    font-size: 1.9rem;
+    margin: 0 0 0.35rem;
+}
+
+.destination-card-meta {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #A7C7E7;
+    margin-bottom: 0.75rem;
+}
+
+.destination-card-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(230, 230, 230, 0.8);
+    margin-bottom: 1.25rem;
+}
+
+.destination-card-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.destination-card-link {
+    font-size: 0.95rem;
+    color: lavender;
+    background: transparent;
+    border: 1px solid rgba(230, 230, 230, 0.35);
+    border-radius: 6px;
+    padding: 0.45rem 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.destination-card-link:hover {
+    background: lavender;
+    border-color: lavender;
+    color: #2a2a2a;
+}
+
+.destinations-all-link {
+    display: inline-block;
+    margin-top: 3rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: #A7C7E7;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 199, 231, 0.4);
+    padding-bottom: 0.2rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.destinations-all-link:hover {
+    color: lavender;
+    border-color: lavender;
+}
+
+@media (max-width: 768px) {
+    .destinations {
+        padding: 3.5rem 1.25rem 3rem;
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 

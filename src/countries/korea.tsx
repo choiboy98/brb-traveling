@@ -26,4 +26,29 @@ const Photos = [
     { src: "/assets/photos/korea/06.jpg", alt: "Jjimjilbang interior" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2025-03-08", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "Twenty-two hours in Seoul, treated like a sprint — KBBQ, a jjimjilbang, the Han River at night, and showing two friends the city my family is from.",
+    quickTips: [
+        { label: "Best time to go", tip: "April for cherry blossoms or October for fall color; summers are humid and late July–August is monsoon season." },
+        {
+            label: "Getting around",
+            tip: "Get a T-money card and use Naver Map or Kakao Map — Google Maps barely works for walking directions in Korea.",
+            links: [
+                // PLACEHOLDER affiliate URL — swap for your tracking link once enrolled
+                { text: "Stays in Seoul", href: "https://www.booking.com/city/kr/seoul.html", sponsored: true },
+            ],
+        },
+        {
+            label: "Must-eats",
+            tip: "KBBQ, late-night pojangmacha street tents, Gwangjang Market bindaetteok, and a convenience-store haul at least once.",
+            links: [
+                // PLACEHOLDER affiliate URL — swap for your tracking link once enrolled
+                { text: "Seoul food tours", href: "https://www.getyourguide.com/seoul-l235/food-wine-tc54/", sponsored: true },
+            ],
+        },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

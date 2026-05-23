@@ -26,4 +26,15 @@ const Photos = [
     { src: "/assets/photos/taiwan/06.jpg", alt: "Rainy alleyway in Taipei" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2025-03-15", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "A last-minute week in Taipei that turned into the warmest stop of the year — midnight beef noodle soup, Elephant Mountain, a monsoon, and the kindest strangers anywhere.",
+    quickTips: [
+        { label: "Best time to go", tip: "October–April for cooler weather; summer is hot, humid, and monsoon-prone (pack a poncho either way)." },
+        { label: "Getting around", tip: "The Taipei MRT is spotless and easy; grab an EasyCard on arrival. The high-speed rail makes Tainan and Kaohsiung easy day-or-two trips." },
+        { label: "Must-eats", tip: "Beef noodle soup, xiao long bao at Din Tai Fung (or any local spot), night market everything, and bubble tea from the source." },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

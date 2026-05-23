@@ -1,4 +1,4 @@
-// File: /Users/dc/Desktop/dataannotation/brb-traveling-2/src/app/blog/[country]/page.tsx
+// File: /Users/dc/Desktop/dataannotation/brb-traveling/src/app/blog/[country]/page.tsx
 import * as entry from '../../../../../src/app/blog/[country]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

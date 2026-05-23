@@ -26,4 +26,15 @@ const Photos = [
     { src: "/assets/photos/norway/06.jpg", alt: "Fjord at golden hour" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2024-07-20", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "Oslo, Bergen, and a fjord cruise that looks fake in person — plus a wordless gym session that proved the deadlift is a universal language.",
+    quickTips: [
+        { label: "Best time to go", tip: "May–September for long days and calm fjord cruises; winter works if you're chasing snow and northern lights instead." },
+        { label: "Getting around", tip: "The Oslo–Bergen railway is one of the world's great train rides. Bergen itself is walkable; book fjord cruises ahead in summer." },
+        { label: "Must-dos", tip: "The Nærøyfjord cruise (yes, it's touristy — it's still the trip), the Fløyen funicular, and the Viking ship museum in Oslo." },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

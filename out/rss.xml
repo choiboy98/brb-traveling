@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>brb-traveling</title>
+    <link>https://www.brb-traveling.com</link>
+    <atom:link href="https://www.brb-traveling.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>A personal travel journal and photo diary — field notes, tips, and photos from Iceland, Finland, Norway, Taiwan, China, and Korea.</description>
+    <language>en-us</language>
+    <managingEditor>Daniel Choi</managingEditor>
+    <item>
+      <title>Iceland&apos;s south coast: a 3-day road trip guide</title>
+      <link>https://www.brb-traveling.com/guides/iceland-south-coast-road-trip</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/guides/iceland-south-coast-road-trip</guid>
+      <description>A practical 3-day route from Reykjavík to the glacier lagoon — the waterfalls and black sand beaches worth stopping for, what driving in Iceland is actually like, and what to pack.</description>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>22 hours in Seoul: a layover itinerary</title>
+      <link>https://www.brb-traveling.com/guides/seoul-layover-itinerary</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/guides/seoul-layover-itinerary</guid>
+      <description>How to turn a long Incheon layover into a real night in Seoul — KBBQ, a jjimjilbang instead of a hotel, the Han River at night, and breakfast at Gwangjang Market.</description>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>China travel notes</title>
+      <link>https://www.brb-traveling.com/blog/china</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/china</guid>
+      <description>Beijing duck, Chengdu hotpot, the Great Wall, and a country that runs on one app — the biggest culture shift in the shortest amount of time.</description>
+      <pubDate>Sat, 10 May 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Taiwan travel notes</title>
+      <link>https://www.brb-traveling.com/blog/taiwan</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/taiwan</guid>
+      <description>A last-minute week in Taipei that turned into the warmest stop of the year — midnight beef noodle soup, Elephant Mountain, a monsoon, and the kindest strangers anywhere.</description>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Korea travel notes</title>
+      <link>https://www.brb-traveling.com/blog/korea</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/korea</guid>
+      <description>Twenty-two hours in Seoul, treated like a sprint — KBBQ, a jjimjilbang, the Han River at night, and showing two friends the city my family is from.</description>
+      <pubDate>Sat, 08 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Finland travel notes</title>
+      <link>https://www.brb-traveling.com/blog/finland</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/finland</guid>
+      <description>I went to Finland for the SkySauna and Santa Claus Village, and stayed for the quiet — Helsinki saunas, Arctic Circle stamps, and a husky sled through complete silence.</description>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Norway travel notes</title>
+      <link>https://www.brb-traveling.com/blog/norway</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/norway</guid>
+      <description>Oslo, Bergen, and a fjord cruise that looks fake in person — plus a wordless gym session that proved the deadlift is a universal language.</description>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Iceland travel notes</title>
+      <link>https://www.brb-traveling.com/blog/iceland</link>
+      <guid isPermaLink="true">https://www.brb-traveling.com/blog/iceland</guid>
+      <description>Driving Iceland&apos;s south coast, where the scenery resets every twenty minutes — black sand beaches, glaciers, hot springs, and the best gas station food on the planet.</description>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

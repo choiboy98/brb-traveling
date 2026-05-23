@@ -26,4 +26,15 @@ const Photos = [
     { src: "/assets/photos/china/06.jpg", alt: "Bund waterfront" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2025-05-10", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "Beijing duck, Chengdu hotpot, the Great Wall, and a country that runs on one app — the biggest culture shift in the shortest amount of time.",
+    quickTips: [
+        { label: "Best time to go", tip: "April–May or September–October for mild weather; avoid Golden Week holidays when everything is packed." },
+        { label: "Getting around", tip: "Set up WeChat Pay or Alipay before you land — it unlocks everything. High-speed rail beats flying between most cities." },
+        { label: "Before you land", tip: "Download a working VPN and offline translation packs; most western apps and maps are blocked once you're there." },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

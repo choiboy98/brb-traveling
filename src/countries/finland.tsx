@@ -26,4 +26,15 @@ const Photos = [
     { src: "/assets/photos/finland/06.jpg", alt: "Public sauna by the water" },
 ];
 
-export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos);
+const Details = {
+    date: "2024-12-14", // PLACEHOLDER — replace with the real trip date
+    excerpt:
+        "I went to Finland for the SkySauna and Santa Claus Village, and stayed for the quiet — Helsinki saunas, Arctic Circle stamps, and a husky sled through complete silence.",
+    quickTips: [
+        { label: "Best time to go", tip: "December–February for the full Arctic winter (Santa Claus Village, husky sleds); summer for lake-and-sauna season." },
+        { label: "Getting around", tip: "Helsinki is walkable with great trams; take the overnight train or a short flight up to Rovaniemi for Lapland." },
+        { label: "Must-dos", tip: "A public sauna (Löyly or Allas), the SkySauna ferris wheel, and crossing the Arctic Circle with snowpants you don't mind getting wet." },
+    ],
+};
+
+export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);
