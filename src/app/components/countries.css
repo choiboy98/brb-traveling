@@ -1,46 +1,25 @@
-.country-container {
-    display: flex;
-    line-height: 1;
-    opacity: 1;
-    transition: 2s;
-}
-
-.hide-country-container {
-    display: flex;
-    line-height: 1;
-    opacity: 0;
-    transition: 2s;
-}
-
-.title-text {
-    font-size: 7vw;
-    font-family: "Galfego";
-    float: left;
-}
-
-.sliding-title-text {
-    font-size: 7vw;
-    font-family: "Galfego";
-    float: left;
-}
-
-.hide {
-    position: fixed;
-    margin: 0;
-    top: 65%;
-    left: 10%;
-    font-size: 7em;
-    font-family: "Galfego";
-    opacity: 0;
-    transition: opacity 1s;
-}
-
 .flag-container {
-    position: relative;
-    display: grid;
-    width: 200px;
-    gap: 10px 10px;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.flag-button {
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.flag-button:focus-visible {
+    outline: 2px solid lavender;
+    outline-offset: 3px;
+}
+
+.flag-button.is-active .flag {
+    box-shadow: 0 0 0 2px #A7C7E7;
 }
 
 .flag {
@@ -52,11 +31,4 @@
 
 .flag:hover {
     transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .title-text,
-    .sliding-title-text {
-        font-size: clamp(2rem, 9vw, 3.25rem);
-    }
 }

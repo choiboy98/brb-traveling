@@ -49,6 +49,13 @@ const Details = {
             ],
         },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Seoul", lat: 37.5665, lng: 126.9780 },
+        { name: "Hongdae", lat: 37.5563, lng: 126.9220 },
+        { name: "Seongsu", lat: 37.5446, lng: 127.0567 },
+        { name: "Han River", lat: 37.5219, lng: 126.9918 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

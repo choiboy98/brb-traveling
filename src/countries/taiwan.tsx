@@ -35,6 +35,13 @@ const Details = {
         { label: "Getting around", tip: "The Taipei MRT is spotless and easy; grab an EasyCard on arrival. The high-speed rail makes Tainan and Kaohsiung easy day-or-two trips." },
         { label: "Must-eats", tip: "Beef noodle soup, xiao long bao at Din Tai Fung (or any local spot), night market everything, and bubble tea from the source." },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Taipei", lat: 25.0330, lng: 121.5654 },
+        { name: "Elephant Mountain", lat: 25.0235, lng: 121.5763 },
+        { name: "Tainan", lat: 22.9999, lng: 120.2270 },
+        { name: "Kaohsiung", lat: 22.6273, lng: 120.3014 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

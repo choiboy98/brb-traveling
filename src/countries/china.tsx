@@ -35,6 +35,13 @@ const Details = {
         { label: "Getting around", tip: "Set up WeChat Pay or Alipay before you land — it unlocks everything. High-speed rail beats flying between most cities." },
         { label: "Before you land", tip: "Download a working VPN and offline translation packs; most western apps and maps are blocked once you're there." },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Beijing", lat: 39.9042, lng: 116.4074 },
+        { name: "Chengdu", lat: 30.5728, lng: 104.0668 },
+        { name: "Shanghai", lat: 31.2304, lng: 121.4737 },
+        { name: "Guangzhou", lat: 23.1291, lng: 113.2644 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

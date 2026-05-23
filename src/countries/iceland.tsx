@@ -43,6 +43,13 @@ const Details = {
         },
         { label: "Must-eats", tip: "Reykjavík hot dogs, lamb soup, and anything from an N1 gas station — genuinely better than most sit-down restaurants." },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Reykjavík", lat: 64.1466, lng: -21.9426 },
+        { name: "Skógafoss", lat: 63.5321, lng: -19.5114 },
+        { name: "Reynisfjara", lat: 63.4060, lng: -19.0712 },
+        { name: "Jökulsárlón", lat: 64.0479, lng: -16.1794 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

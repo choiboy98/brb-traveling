@@ -35,6 +35,12 @@ const Details = {
         { label: "Getting around", tip: "Helsinki is walkable with great trams; take the overnight train or a short flight up to Rovaniemi for Lapland." },
         { label: "Must-dos", tip: "A public sauna (Löyly or Allas), the SkySauna ferris wheel, and crossing the Arctic Circle with snowpants you don't mind getting wet." },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Helsinki", lat: 60.1699, lng: 24.9384 },
+        { name: "Rovaniemi", lat: 66.5039, lng: 25.7294 },
+        { name: "Santa Claus Village", lat: 66.5436, lng: 25.8470 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

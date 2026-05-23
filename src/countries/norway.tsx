@@ -35,6 +35,12 @@ const Details = {
         { label: "Getting around", tip: "The Oslo–Bergen railway is one of the world's great train rides. Bergen itself is walkable; book fjord cruises ahead in summer." },
         { label: "Must-dos", tip: "The Nærøyfjord cruise (yes, it's touristy — it's still the trip), the Fløyen funicular, and the Viking ship museum in Oslo." },
     ],
+    // Approximate coordinates — refine as needed.
+    places: [
+        { name: "Oslo", lat: 59.9139, lng: 10.7522 },
+        { name: "Bergen", lat: 60.3913, lng: 5.3221 },
+        { name: "Nærøyfjord", lat: 60.9346, lng: 6.9407 },
+    ],
 };
 
 export const data = new Country(Title, CountryCode, TitleText, SubText, textStyles, Slug, Blog, Photos, Details);

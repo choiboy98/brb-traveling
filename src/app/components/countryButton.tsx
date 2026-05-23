@@ -1,17 +1,27 @@
-import React, { Dispatch, SetStateAction } from 'react';
 import './countries.css';
 import { Country } from './country';
+import { displayName } from '../lib/seo';
 
-function focusCountry(country: Country, displaySelectedCountry: Dispatch<SetStateAction<Country>>, showcaseCountry = () => {}) {
-    displaySelectedCountry(country);
-    showcaseCountry();
-}
+type Props = {
+    country: Country;
+    isActive?: boolean;
+    onSelect: () => void;
+};
 
-export default function CountryButton(country: Country, displaySelectedCountry: Dispatch<SetStateAction<Country>>, showcaseCountry = () => {}) {
+export default function CountryButton({ country, isActive = false, onSelect }: Props) {
     return (
-        <img 
-        onClick={() => focusCountry(country, displaySelectedCountry, showcaseCountry)}
-        className='flag' 
-        src={'./assets/flags/4x3/' + country.countryCode.toLowerCase() + '.svg'}/>
-    )
+        <button
+            type="button"
+            className={isActive ? 'flag-button is-active' : 'flag-button'}
+            onClick={onSelect}
+            aria-label={`Show ${displayName(country)}`}
+        >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                className="flag"
+                src={'./assets/flags/4x3/' + country.countryCode.toLowerCase() + '.svg'}
+                alt=""
+            />
+        </button>
+    );
 }

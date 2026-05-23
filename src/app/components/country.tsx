@@ -16,6 +16,12 @@ export type QuickTip = {
     links?: QuickTipLink[];
 };
 
+export type Place = {
+    name: string;
+    lat: number;
+    lng: number;
+};
+
 export function hasSponsoredLinks(tips: QuickTip[]): boolean {
     return tips.some((tip) => tip.links?.some((link) => link.sponsored));
 }
@@ -28,6 +34,8 @@ export type CountryDetails = {
     quickTips?: QuickTip[];
     /** Defaults to the first photo. */
     coverPhoto?: Photo;
+    /** Places visited, plotted as dots on the landing-hero country map. */
+    places?: Place[];
 };
 
 export class Country {
@@ -43,6 +51,7 @@ export class Country {
     excerpt: string;
     quickTips: QuickTip[];
     coverPhoto: Photo | null;
+    places: Place[];
 
     constructor(
         title: string,
@@ -67,6 +76,7 @@ export class Country {
         this.excerpt = details.excerpt ?? subText;
         this.quickTips = details.quickTips ?? [];
         this.coverPhoto = details.coverPhoto ?? photos[0] ?? null;
+        this.places = details.places ?? [];
     }
 
     equals(otherCountry: Country) {
