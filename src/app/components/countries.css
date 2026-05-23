@@ -53,3 +53,10 @@
 .flag:hover {
     transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+    .title-text,
+    .sliding-title-text {
+        font-size: clamp(2rem, 9vw, 3.25rem);
+    }
+}

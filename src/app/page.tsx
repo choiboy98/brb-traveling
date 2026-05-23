@@ -2,10 +2,11 @@
 
 import './landing.css'
 import { useState } from 'react';
-import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import Link from 'next/link';
 
 import CountryButton from './components/countryButton';
 import CountryRenderer from './components/countryRenderer';
+import BackgroundVideo from './components/backgroundVideo';
 import { countries } from "./components/countryExport";
 import { Country } from '@/app/components/country';
 
@@ -13,7 +14,6 @@ export default function Home() {
   const dummyCountry = new Country("", "", "", "", "");
   const [currCountry, setCountry] = useState(dummyCountry);
   const [isFocused, setFocus] = useState(false);
-  const [isMuted, toggleMute] = useState(false);
 
   function handleClick(country : Country) {
     if (!isFocused) {
@@ -29,25 +29,24 @@ export default function Home() {
   return (
     <div className='background-page'>
       <div className={isFocused ? "focused-vid" : "landing-vid"}>
-        <LazyLoadComponent>
-          <video className="vid" loop muted={isMuted} preload='none' controls>
-            <source src="https://media.githubusercontent.com/media/choiboy98/brb-traveling/main/public/assets/videos/taiwan-website-smallest.mp4" type="video/mp4"/>
-          </video>
-        </LazyLoadComponent>
-        <p onClick={() => toggleMute(!isMuted)} className='mute'>{isMuted ? "unmute" : "mute"}</p>
+        <BackgroundVideo
+          className="vid"
+          src="/assets/videos/hls/master.m3u8"
+          poster="/assets/videos/taiwan-poster.jpg"
+        />
       </div>
-      
+
       <div className="landing-container">
         <p className={isFocused ? "vanish-landing-text" : "landing-text"}>
             BRB TRAVELING
         </p>
-        
+
         {CountryRenderer(
           countries.flatMap(country => {
             return (country.title)
           }), isFocused
         )}
-        
+
         <div className='flag-container'>
           {countries.map(country => {
             return (
@@ -56,7 +55,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      
+
       <div className={isFocused ? "country-text" : "vanish-country-text"}>
           <p className='country-header-text'>
             {currCountry.titleText}
@@ -65,6 +64,17 @@ export default function Home() {
           <p className='country-sub-text'>
             {currCountry.subText}
           </p>
+
+          {currCountry.slug && (
+            <div className='country-actions'>
+              <Link href={`/blog/${currCountry.slug}`} className='country-action-btn'>
+                Read the blog →
+              </Link>
+              <Link href={`/photos/${currCountry.slug}`} className='country-action-btn'>
+                View photos →
+              </Link>
+            </div>
+          )}
         </div>
     </div>
   )
